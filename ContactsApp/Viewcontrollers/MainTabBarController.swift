@@ -19,7 +19,6 @@ class MainTabBarController: UITabBarController {
     func dataSender() {
         guard let viewControllers = self.viewControllers else { return }
         
-        
         viewControllers.forEach {
             if let navigationVC = $0 as? UINavigationController {
                 if let topVC = navigationVC.topViewController as? PersonsListViewController {
