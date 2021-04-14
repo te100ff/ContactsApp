@@ -11,11 +11,6 @@ class PersonsListViewController: UITableViewController {
     
     var persons: [Person]!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,14 +27,8 @@ class PersonsListViewController: UITableViewController {
         
         return cell
     }
-    
-    // MARK: - Table view delegate
-   
-   
 
     // MARK: - Navigation
-
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let personDetails = segue.destination as? DetailsViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }

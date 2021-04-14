@@ -31,7 +31,11 @@ extension Person {
         
         if minAmount > 0 {
             for index in 0...minAmount - 1 {
-                persons.append(Person(firstName: firstNames[index], lastName: lastNames[index], phoneNumber: phoneNumber[index], email: emails[index]))
+                persons.append(Person(
+                                firstName: firstNames[index],
+                                lastName: lastNames[index],
+                                phoneNumber: phoneNumber[index],
+                                email: emails[index]))
             }
         }
         return persons

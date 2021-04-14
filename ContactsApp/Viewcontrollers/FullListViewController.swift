@@ -10,23 +10,12 @@ import UIKit
 class FullListViewController: UITableViewController {
     
     var persons: [Person]!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         persons.count
     }
-
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
@@ -37,7 +26,7 @@ class FullListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "info", for: indexPath)
         let person = persons[indexPath.section]
         var content = cell.defaultContentConfiguration()
-       
+        
         if indexPath.row == 0 {
             content.text = person.phoneNumber
             content.image = UIImage(systemName: "phone.circle.fill")?.withTintColor(.systemTeal, renderingMode: .alwaysOriginal)
@@ -48,14 +37,14 @@ class FullListViewController: UITableViewController {
             content.image = UIImage(systemName: "paperplane.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
             content.textProperties.font = .italicSystemFont(ofSize: 17)
             content.textProperties.color = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
-            
         }
+        
         cell.backgroundColor = #colorLiteral(red: 0.8201146722, green: 0.9668077826, blue: 0.7056682706, alpha: 1)
         cell.contentConfiguration = content
-
+        
         return cell
     }
-// MARK: - Section view setup
+    // MARK: - Section view setup
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         45
     }

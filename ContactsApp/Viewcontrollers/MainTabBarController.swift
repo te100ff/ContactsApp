@@ -9,21 +9,19 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
-    let persons = Person.getPersons()
-
+    private let persons = Person.getPersons()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        xxx()
-        
-        
+        dataSender()
     }
     
-    func xxx() {
+    func dataSender() {
         guard let viewControllers = self.viewControllers else { return }
         
         viewControllers.forEach {
-            if let welcomeVC = $0 as? FullListViewController {
-                welcomeVC.persons = persons
+            if let personsVC = $0 as? FullListViewController {
+                personsVC.persons = persons
             } else if let navigationVC = $0 as? UINavigationController {
                 let userInfoVC = navigationVC.topViewController as! PersonsListViewController
                 userInfoVC.persons = persons
