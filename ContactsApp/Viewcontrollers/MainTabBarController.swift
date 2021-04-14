@@ -19,12 +19,16 @@ class MainTabBarController: UITabBarController {
     func dataSender() {
         guard let viewControllers = self.viewControllers else { return }
         
+        
         viewControllers.forEach {
-            if let personsVC = $0 as? FullListViewController {
-                personsVC.persons = persons
-            } else if let navigationVC = $0 as? UINavigationController {
-                let userInfoVC = navigationVC.topViewController as! PersonsListViewController
-                userInfoVC.persons = persons
+            if let navigationVC = $0 as? UINavigationController {
+                if let topVC = navigationVC.topViewController as? PersonsListViewController {
+                    topVC.persons = persons
+                } else {
+                    if let topVC = navigationVC.topViewController as? FullListViewController {
+                        topVC.persons = persons
+                    }
+                }
             }
         }
     }
