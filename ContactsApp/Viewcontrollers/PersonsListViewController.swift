@@ -10,8 +10,14 @@ import UIKit
 class PersonsListViewController: UITableViewController {
     
     var persons: [Person]!
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.separatorColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+    }
+    
     // MARK: - Table view data source
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return persons.count
