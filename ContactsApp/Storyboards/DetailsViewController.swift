@@ -18,6 +18,9 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         phoneLabel.text = "Phone: \(person.phoneNumber)"
         emailLabel.text = "E-mail: \(person.email)"
+        
+        navigationItem.largeTitleDisplayMode = .never
+        title = person.fullName
     }
     
 }

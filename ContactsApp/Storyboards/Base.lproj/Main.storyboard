@@ -73,7 +73,6 @@
                             <constraint firstItem="Nna-kI-RxD" firstAttribute="top" secondItem="EXT-4d-Oso" secondAttribute="top" constant="16" id="Pr5-9B-5NE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="319-L8-Drj"/>
                     <connections>
                         <outlet property="emailLabel" destination="YMd-Rd-np9" id="qLN-yI-8rX"/>
                         <outlet property="phoneLabel" destination="vto-Ev-TkE" id="nJ6-Uh-VoF"/>
