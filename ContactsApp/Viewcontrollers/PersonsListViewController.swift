@@ -11,11 +11,6 @@ class PersonsListViewController: UITableViewController {
     
     var persons: [Person]!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.separatorColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
-    }
-    
     // MARK: - Table view data source
     
 
@@ -30,6 +25,8 @@ class PersonsListViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         content.text = person.fullName
         cell.contentConfiguration = content
+        
+        tableView.separatorColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
         
         return cell
     }
